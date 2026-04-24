@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Paulo Henrique Silveira</title>
+
+    <!-- Bootstrap 5 (CSS) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome (ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS do projeto (externo) -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="portfolio-body">
+    <div class="bg-orb orb-1" aria-hidden="true"></div>
+    <div class="bg-orb orb-2" aria-hidden="true"></div>
+
+    <nav class="navbar navbar-expand-lg sticky-top main-nav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#top">
+                <i class="fa-solid fa-sparkles me-2"></i>Paulo.dev
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav ms-auto gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#jornada">Jornada</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#interesses">Interesses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+                <div class="ms-lg-3 d-flex align-items-center gap-2 py-2 py-lg-0">
+                    <span class="small text-body-secondary d-none d-lg-inline">Tema</span>
+                    <button id="themeToggle" class="btn btn-outline-secondary btn-sm rounded-pill px-3" type="button">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Header / Hero -->
+        <header id="top" class="hero-section py-5">
+            <div class="container py-lg-4">
+                <div class="row align-items-center g-4 g-lg-5">
+
+                    <div class="col-12 col-lg-5 text-center text-lg-start reveal-up">
+                        <span class="hero-kicker">Acessibilidade + UX/UI</span>
+                        <h1 class="display-5 fw-bold mt-3 mb-3">
+                            Interfaces que funcionam para<br>todo mundo.
+                        </h1>
+                        <p class="lead text-body-secondary mb-4">
+                            Sou Paulo Henrique Silveira. Transformo boas ideias em experiências inclusivas, úteis e
+                            esteticamente cuidadas.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
+                            <a class="btn btn-primary btn-lg rounded-pill px-4" href="#projetos">
+                                Explorar projetos
+                            </a>
+                            <a class="btn btn-outline-dark btn-lg rounded-pill px-4" href="#contato">
+                                Falar comigo
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-7 reveal-up delay-1">
+                        <div class="hero-panel p-4 p-lg-5">
+                            <div class="d-flex flex-column flex-md-row align-items-center gap-4">
+                                <img class="profile-img" src="assets/img/foto.svg" alt="Foto de Paulo Henrique Silveira">
+                                <div>
+                                    <h2 class="h4 fw-bold mb-2">Paulo Henrique Silveira</h2>
+                                    <p class="mb-3 text-body-secondary">
+                                        Estudante de Ciência da Computação com foco em acessibilidade digital,
+                                        usabilidade e design centrado no usuário.
+                                    </p>
+                                    <div class="hero-badges d-flex flex-wrap gap-2">
+                                        <span class="badge text-bg-light border">WCAG</span>
+                                        <span class="badge text-bg-light border">UX Research</span>
+                                        <span class="badge text-bg-light border">UI Design</span>
+                                        <span class="badge text-bg-light border">IHC</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- SOBRE -->
+        <section id="sobre" class="py-5 section-space">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-tag">Quem sou</span>
+                    <h2 class="section-title">Design inclusivo não é detalhe, é base</h2>
+                </div>
+
+                <div class="row g-4 mt-1">
+                    <div class="col-lg-8 reveal-up delay-1">
+                        <div class="card card-soft h-100">
+                            <div class="card-body p-4 p-lg-5">
+                                <p>
+                                    Sou estudante de Ciência da Computação e dedico minha formação à criação de
+                                    experiências digitais acessíveis. Meu trabalho combina análise de barreiras,
+                                    princípios de usabilidade e decisões visuais que melhoram a jornada de diferentes
+                                    perfis de usuário.
+                                </p>
+                                <p class="mb-0 text-body-secondary">
+                                    Meu objetivo é projetar interfaces que sejam claras, eficientes e inclusivas,
+                                    com foco real em impacto e autonomia das pessoas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 reveal-up delay-2">
+                        <div class="card card-soft h-100">
+                            <div class="card-body p-4">
+                                <h3 class="h6 text-uppercase text-body-secondary mb-3">Resumo rápido</h3>
+                                <ul class="list-unstyled mb-0 profile-facts">
+                                    <li><strong>Área</strong><span>Acessibilidade e UX/UI</span></li>
+                                    <li><strong>Foco</strong><span>Interfaces inclusivas</span></li>
+                                    <li><strong>Idioma</strong><span>Português / Inglês</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- JORNADA -->
+        <section id="jornada" class="py-5 section-space section-tint">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-tag">Trajetória</span>
+                    <h2 class="section-title">Como construo soluções</h2>
+                </div>
+
+                <div class="row g-4 mt-1">
+                    <div class="col-md-4 reveal-up delay-1">
+                        <article class="journey-card h-100">
+                            <div class="journey-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <h3 class="h5">Diagnóstico</h3>
+                            <p class="mb-0 text-body-secondary">
+                                Avalio interfaces com foco em acessibilidade, usabilidade e fluxo de interação.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="col-md-4 reveal-up delay-2">
+                        <article class="journey-card h-100">
+                            <div class="journey-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+                            <h3 class="h5">Estratégia de UX</h3>
+                            <p class="mb-0 text-body-secondary">
+                                Priorizo problemas críticos, proponho melhorias e desenho experiências mais fluidas.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="col-md-4 reveal-up delay-3">
+                        <article class="journey-card h-100">
+                            <div class="journey-icon"><i class="fa-solid fa-check-double"></i></div>
+                            <h3 class="h5">Validação</h3>
+                            <p class="mb-0 text-body-secondary">
+                                Testo navegação assistiva e consistência visual para garantir clareza e eficiência.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HABILIDADES -->
+        <section id="habilidades" class="py-5 section-space">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-tag">Competências</span>
+                    <h2 class="section-title">Habilidades em acessibilidade e design</h2>
+                </div>
+
+                <div class="row g-4 mt-1">
+                    <div class="col-lg-6 reveal-up delay-1">
+                        <div class="card card-soft h-100">
+                            <div class="card-body p-4">
+                                <h3 class="h5 mb-3">Acessibilidade Digital</h3>
+                                <ul class="mb-0 custom-list">
+                                    <li>Avaliação de acessibilidade com heurísticas e boas práticas</li>
+                                    <li>Identificação de barreiras em interfaces</li>
+                                    <li>Uso de leitores de tela e navegação por teclado</li>
+                                    <li>Estrutura semântica com HTML acessível</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 reveal-up delay-2">
+                        <div class="card card-soft h-100">
+                            <div class="card-body p-4">
+                                <h3 class="h5 mb-3">Design e UX</h3>
+                                <ul class="mb-0 custom-list">
+                                    <li>Heurísticas de usabilidade</li>
+                                    <li>Criação de personas e cenários</li>
+                                    <li>Prototipação e análise de interfaces</li>
+                                    <li>Design centrado no usuário</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETOS -->
+        <section id="projetos" class="py-5 section-space section-tint">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-tag">Portfólio</span>
+                    <h2 class="section-title">Projetos em destaque</h2>
+                </div>
+
+                <div class="row g-4 mt-1">
+                    <div class="col-md-6 reveal-up delay-1">
+                        <article class="project-card h-100">
+                            <div class="project-meta mb-3">Projeto acadêmico</div>
+                            <h3 class="h4">Checklists de Acessibilidade</h3>
+                            <p class="text-body-secondary">
+                                Avaliação de interfaces com critérios de acessibilidade e usabilidade, gerando ações
+                                práticas para evolução contínua.
+                            </p>
+                            <ul class="small custom-list mb-4">
+                                <li>Análise de interfaces reais</li>
+                                <li>Aplicação de heurísticas</li>
+                                <li>Identificação de problemas críticos</li>
+                            </ul>
+                            <a class="btn btn-dark rounded-pill px-4"
+                                href="https://github.com/i-am-Gab/Sitedechecklistsdeacessibilidade" target="_blank"
+                                rel="noreferrer">
+                                Ver projeto <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+                            </a>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 reveal-up delay-2">
+                        <article class="project-card h-100">
+                            <div class="project-meta mb-3">Pesquisa e relatório</div>
+                            <h3 class="h4">Análises de Acessibilidade (IHC)</h3>
+                            <p class="text-body-secondary">
+                                Estudos de diagnóstico de acessibilidade com recomendações de melhorias de impacto
+                                alto para pessoas usuárias.
+                            </p>
+                            <ul class="small custom-list mb-0">
+                                <li>Uso de critérios WCAG</li>
+                                <li>Testes com navegação assistiva</li>
+                                <li>Recomendações priorizadas</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERESSES -->
+        <section id="interesses" class="py-5 section-space">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-tag">Exploração</span>
+                    <h2 class="section-title">Temas que estudo continuamente</h2>
+                </div>
+
+                <div class="row g-3 mt-1 reveal-up delay-1">
+                    <div class="col-sm-6 col-lg-3"><div class="interest-pill">Acessibilidade digital</div></div>
+                    <div class="col-sm-6 col-lg-3"><div class="interest-pill">UX/UI Design</div></div>
+                    <div class="col-sm-6 col-lg-3"><div class="interest-pill">Design inclusivo</div></div>
+                    <div class="col-sm-6 col-lg-3"><div class="interest-pill">Interação Humano-Computador</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contato" class="py-5 section-space section-tint">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-tag">Contato</span>
+                    <h2 class="section-title">Vamos conversar sobre acessibilidade</h2>
+                </div>
+
+                <div class="row g-4 mt-1">
+                    <div class="col-lg-6 reveal-up delay-1">
+                        <div class="card card-soft h-100">
+                            <div class="card-body p-4">
+                                <h3 class="h5 mb-3">Redes e canais</h3>
+                                <ul class="list-unstyled mb-0 contact-list">
+                                    <li>
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <a href="mailto:paulo.silveira2@estudante.ufla.br" target="_blank" rel="noreferrer">Email</a>
+                                    </li>
+                                    <li>
+                                        <i class="fa-brands fa-github"></i>
+                                        <a href="https://github.com/PauloHSilveir" target="_blank" rel="noreferrer">GitHub</a>
+                                    </li>
+                                    <li>
+                                        <i class="fa-brands fa-linkedin"></i>
+                                        <a href="https://www.linkedin.com/in/paulo-henrique-dos-anjos-silveira-420069281/" target="_blank"
+                                            rel="noreferrer">LinkedIn</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 reveal-up delay-2">
+                        <div class="card card-soft h-100">
+                            <div class="card-body p-4">
+                                <h3 class="h5 mb-3">Presença digital</h3>
+                                <ul class="list-unstyled mb-0 contact-list">
+                                    <li>
+                                        <i class="fa-brands fa-instagram"></i>
+                                        <a href="https://instagram.com/paulosilveira01" target="_blank" rel="noreferrer">Instagram</a>
+                                    </li>
+                                    <li>
+                                        <i class="fa-brands fa-facebook"></i>
+                                        <a href="https://facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
+                                    </li>
+                                    <li>
+                                        <i class="fa-brands fa-youtube"></i>
+                                        <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">YouTube</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+        <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+            <small class="text-secondary">© <span id="year"></span> Página Pessoal — Paulo Henrique Silveira</small>
+    <footer class="footer-clean py-4 border-top">
+        <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+            <small class="text-body-secondary">© <span id="year"></span> Paulo Henrique Silveira</small>
+            <small class="text-body-secondary">Construído com Bootstrap e foco em acessibilidade</small>
+    <!-- Bootstrap JS (necessário para navbar colapsável) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS do projeto -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
