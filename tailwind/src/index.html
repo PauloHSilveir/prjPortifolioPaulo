@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paulo Henrique | Acessibilidade & Design</title>
+
+  <!-- Tailwind CDN with custom config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0066cc',
+            secondary: '#6666ff',
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.6s ease-in',
+            'slide-up': 'slideUp 0.6s ease-out',
+            'float': 'float 3s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: { from: { opacity: '0' }, to: { opacity: '1' } },
+            slideUp: { from: { opacity: '0', transform: 'translateY(20px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
+            float: { '0%, 100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-10px)' } }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="./assets/css/syles.css">
+  
+  <style>
+    .gradient-text {
+      background: linear-gradient(135deg, #0066cc 0%, #6666ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 102, 204, 0.15);
+    }
+    
+    .skill-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 252, 255, 1) 100%);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 102, 204, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .skill-card:hover {
+      border-color: rgba(0, 102, 204, 0.3);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(232, 241, 255, 1) 100%);
+      box-shadow: 0 10px 30px rgba(0, 102, 204, 0.1);
+    }
+
+    /* Dark Mode Styles */
+    .dark .skill-card {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 1) 100%);
+      border: 1px solid rgba(0, 102, 204, 0.2);
+    }
+
+    .dark .skill-card:hover {
+      border-color: rgba(0, 102, 204, 0.5);
+      background: linear-gradient(135deg, rgba(30, 41, 59, 1) 0%, rgba(15, 23, 42, 1) 100%);
+      box-shadow: 0 10px 30px rgba(0, 102, 204, 0.2);
+    }
+
+    /* Smooth theme transition */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-gray-50 via-blue-50 to-gray-50 dark:from-gray-900 dark:via-blue-950 dark:to-gray-900 text-gray-800 dark:text-gray-100 overflow-x-hidden transition-colors">
+
+<!-- NAVBAR -->
+<nav class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+    <a href="#" class="flex items-center gap-2 group">
+      <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center text-white transform group-hover:scale-110 transition-transform">
+        <i class="fa-solid fa-universal-access text-sm"></i>
+      </div>
+      <h1 class="font-bold text-lg bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hidden sm:block">
+        Paulo Henrique
+      </h1>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex gap-8 text-sm font-medium">
+      <a href="#sobre" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative group">
+        Sobre
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
+      </a>
+      <a href="#habilidades" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative group">
+        Habilidades
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
+      </a>
+      <a href="#projetos" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative group">
+        Projetos
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
+      </a>
+      <a href="#contato" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative group">
+        Contato
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
+      </a>
+    </div>
+
+    <!-- Theme Toggle and Mobile Menu -->
+    <div class="flex items-center gap-4">
+      <!-- Theme Toggle Button -->
+      <button id="theme-toggle" class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" aria-label="Toggle theme">
+        <i class="fa-solid fa-sun text-amber-500 dark:hidden"></i>
+        <i class="fa-solid fa-moon text-blue-400 hidden dark:block"></i>
+      </button>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+        <i class="fa-solid fa-bars text-gray-600 dark:text-gray-300"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+    <div class="px-4 py-3 space-y-3">
+      <a href="#sobre" class="block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Sobre</a>
+      <a href="#habilidades" class="block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Habilidades</a>
+      <a href="#projetos" class="block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Projetos</a>
+      <a href="#contato" class="block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">Contato</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+
+  <div class="animate-fade-in space-y-6">
+    <div class="inline-block">
+      <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold flex items-center gap-2 w-fit">
+        <i class="fa-solid fa-check-circle"></i>
+        Especialista em Acessibilidade
+      </span>
+    </div>
+
+    <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+      Design acessível não é opcional. 
+      <span class="gradient-text block mt-2">É um direito.</span>
+    </h1>
+
+    <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed max-w-lg">
+      Sou estudante de Ciência da Computação focado em 
+      <strong class="text-gray-800 dark:text-gray-100">Acessibilidade Digital e UX</strong>.  
+      Transformo interfaces em experiências inclusivas e utilizáveis por todos,
+      incluindo pessoas com deficiência.
+    </p>
+
+    <div class="flex flex-wrap gap-4">
+      <a href="#projetos" class="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/30 transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
+        <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+        Ver projetos
+      </a>
+
+      <a href="https://github.com/PauloHSilveir" target="_blank" class="group border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg font-semibold hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 flex items-center gap-2">
+        <i class="fa-brands fa-github"></i>
+        GitHub
+      </a>
+    </div>
+  </div>
+
+  <div class="flex justify-center animate-slide-up md:animate-float">
+    <div class="relative w-72 h-72 md:w-80 md:h-80">
+      <!-- Gradient background orbs -->
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-400 dark:from-blue-600 dark:to-purple-600 rounded-3xl opacity-20 blur-2xl"></div>
+      
+      <!-- Main image container -->
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 dark:from-blue-800 dark:to-purple-800 rounded-3xl flex items-center justify-center overflow-hidden shadow-2xl dark:shadow-blue-900/50">
+        <img src="./assets/img/foto.svg" alt="Paulo Henrique" class="w-full h-full object-cover">
+      </div>
+      
+      <!-- Decorative elements -->
+      <div class="absolute -top-4 -right-4 w-20 h-20 bg-blue-200 dark:bg-blue-900 rounded-full opacity-40 blur-xl"></div>
+      <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-purple-200 dark:bg-purple-900 rounded-full opacity-40 blur-xl"></div>
+    </div>
+  </div>
+
+</header>
+
+<!-- SOBRE -->
+<section id="sobre" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+
+  <div class="mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+      Sobre <span class="gradient-text">mim</span>
+    </h2>
+    <p class="text-gray-600 dark:text-gray-300 text-lg max-w-2xl">Conheça minha trajetória e área de especialização</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8">
+
+    <div class="skill-card p-8 rounded-2xl group hover:shadow-lg transition-all">
+      <div class="flex items-start gap-4 mb-4">
+        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
+          <i class="fa-solid fa-universal-access"></i>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">Acessibilidade Digital</h3>
+        </div>
+      </div>
+      
+      <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+        Atuo na área de <strong>Acessibilidade Digital</strong>, avaliando interfaces
+        com base em heurísticas, diretrizes e testes práticos.
+      </p>
+
+      <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+        Tenho experiência com auditorias de acessibilidade, identificação de falhas em componentes
+        interativos e análise de problemas relacionados a navegação por teclado, leitores de tela
+        e semântica HTML.
+      </p>
+
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full text-sm font-medium">WCAG 2.1</span>
+        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full text-sm font-medium">ARIA</span>
+        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full text-sm font-medium">Auditoria</span>
+      </div>
+    </div>
+
+    <div class="skill-card p-8 rounded-2xl">
+      <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-2">
+        <i class="fa-solid fa-user-tie text-blue-600"></i>
+        Informações Profissionais
+      </h3>
+      
+      <ul class="space-y-4">
+        <li class="flex gap-3 items-start">
+          <i class="fa-solid fa-map-pin text-blue-600 mt-1 flex-shrink-0"></i>
+          <div>
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Local</p>
+            <p class="text-gray-600 dark:text-gray-300">Lavras - Minas Gerais</p>
+          </div>
+        </li>
+        
+        <li class="flex gap-3 items-start">
+          <i class="fa-solid fa-graduation-cap text-blue-600 mt-1 flex-shrink-0"></i>
+          <div>
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Formação</p>
+            <p class="text-gray-600 dark:text-gray-300">Ciência da Computação (UFLA)</p>
+          </div>
+        </li>
+
+        <li class="flex gap-3 items-start">
+          <i class="fa-solid fa-globe text-blue-600 mt-1 flex-shrink-0"></i>
+          <div>
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Especialização</p>
+            <p class="text-gray-600 dark:text-gray-300">Acessibilidade Digital & UX</p>
+          </div>
+        </li>
+
+        <li class="flex gap-3 items-start">
+          <i class="fa-solid fa-language text-blue-600 mt-1 flex-shrink-0"></i>
+          <div>
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Idiomas</p>
+            <p class="text-gray-600 dark:text-gray-300">Português · Inglês</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- HABILIDADES -->
+<section id="habilidades" class="bg-gradient-to-b from-white via-blue-50 to-white dark:from-gray-900 dark:via-blue-950 dark:to-gray-900 py-16 md:py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        <span class="gradient-text">Habilidades</span> & Expertise
+      </h2>
+      <p class="text-gray-600 dark:text-gray-300 text-lg max-w-2xl">Tecnologias e competências que domino para criar experiências acessíveis</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="skill-card p-8 rounded-2xl group">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <h3 class="font-bold text-xl text-gray-900 dark:text-gray-100">Acessibilidade</h3>
+        </div>
+        <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-dot text-blue-600 text-xs"></i>
+            <span>WCAG & boas práticas</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-dot text-blue-600 text-xs"></i>
+            <span>Navegação por teclado</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-dot text-blue-600 text-xs"></i>
+            <span>Semântica HTML</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-dot text-blue-600 text-xs"></i>
+            <span>ARIA Labels</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-dot text-blue-600 text-xs"></i>
+            <span>Leitores de tela</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="skill-card p-8 rounded-2xl group">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-palette"></i>
+          </div>
+          <h3 class="font-bold text-xl text-gray-900 dark:text-gray-100">UX / UI</h3>
+        </div>
+        <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-dot text-purple-600 text-xs"></i>
+            <span>Heurísticas de usabilidade</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-dot text-purple-600 text-xs"></i>
+            <span>Design centrado no usuário</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-dot text-purple-600 text-xs"></i>
+            <span>Wireframes</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-dot text-purple-600 text-xs"></i>
+            <span>Prototipação</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-dot text-purple-600 text-xs"></i>
+            <span>Testes com usuários</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="skill-card p-8 rounded-2xl group">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-wrench"></i>
+          </div>
+          <h3 class="font-bold text-xl text-gray-900 dark:text-gray-100">Ferramentas</h3>
+        </div>
+        <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-dot text-pink-600 text-xs"></i>
+            <span>Figma</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-dot text-pink-600 text-xs"></i>
+            <span>HTML/CSS</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-dot text-pink-600 text-xs"></i>
+            <span>JavaScript</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-dot text-pink-600 text-xs"></i>
+            <span>Tailwind CSS</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-dot text-pink-600 text-xs"></i>
+            <span>Git/GitHub</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJETOS -->
+<section id="projetos" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+  <div class="mb-12">
+    <div class="flex items-center gap-2 mb-3">
+      <div class="flex-shrink-0">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold">
+          <i class="fa-solid fa-project-diagram"></i>
+          PORTFÓLIO
+        </span>
+      </div>
+    </div>
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+      Meus <span class="gradient-text">Projetos</span>
+    </h2>
+    <p class="text-gray-600 dark:text-gray-300 text-lg max-w-2xl">Trabalhos focados em acessibilidade, design e experiência do usuário</p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <!-- Projeto 1 -->
+    <div class="card-hover group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl">
+      <!-- Image/Icon Container -->
+      <div class="h-48 bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600 flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+          <i class="fa-solid fa-grid absolute text-white text-8xl" style="top: -20px; right: -20px;"></i>
+        </div>
+        <div class="relative z-10 text-center">
+          <i class="fa-solid fa-checklist text-white text-5xl mb-2 block"></i>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="p-6">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+          Checklists de Acessibilidade
+        </h3>
+        
+        <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+          Avaliação completa de interfaces com foco em usabilidade e acessibilidade digital. Análise de conformidade WCAG 2.1 e boas práticas.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-xs font-medium rounded-full">WCAG 2.1</span>
+          <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-xs font-medium rounded-full">Audit</span>
+          <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-xs font-medium rounded-full">A11y</span>
+        </div>
+
+        <a href="https://github.com/i-am-Gab/Sitedechecklistsdeacessibilidade" target="_blank" 
+           class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold group/link">
+          <i class="fa-solid fa-github"></i>
+          Ver Repositório
+          <i class="fa-solid fa-arrow-right transform group-hover/link:translate-x-1 transition-transform"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Projeto 2 -->
+    <div class="card-hover group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl">
+      <!-- Image/Icon Container -->
+      <div class="h-48 bg-gradient-to-br from-purple-500 via-purple-600 to-pink-600 flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+          <i class="fa-solid fa-lightbulb absolute text-white text-8xl" style="bottom: -30px; left: -30px;"></i>
+        </div>
+        <div class="relative z-10 text-center">
+          <i class="fa-solid fa-lightbulb text-white text-5xl mb-2 block"></i>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="p-6">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+          Projeto IHC
+        </h3>
+        
+        <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+          Desenvolvimento de soluções acessíveis baseadas em personas, cenários de uso e testes com usuários reais. Pesquisa centrada no usuário.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 text-xs font-medium rounded-full">UX Research</span>
+          <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 text-xs font-medium rounded-full">Personas</span>
+          <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 text-xs font-medium rounded-full">Testing</span>
+        </div>
+
+        <a href="#contato" 
+           class="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-semibold group/link">
+          <i class="fa-solid fa-envelope"></i>
+          Saiba Mais
+          <i class="fa-solid fa-arrow-right transform group-hover/link:translate-x-1 transition-transform"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Projeto 3 -->
+    <div class="card-hover group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl">
+      <!-- Image/Icon Container -->
+      <div class="h-48 bg-gradient-to-br from-pink-500 via-pink-600 to-red-600 flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+          <i class="fa-solid fa-mobile absolute text-white text-8xl" style="top: -30px; right: -30px;"></i>
+        </div>
+        <div class="relative z-10 text-center">
+          <i class="fa-solid fa-mobile text-white text-5xl mb-2 block"></i>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="p-6">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">
+          Portfólio Responsivo
+        </h3>
+        
+        <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+          Website pessoal construído com foco em acessibilidade, design responsivo, performance otimizada e práticas modernas de web design.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="px-3 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-400 text-xs font-medium rounded-full">HTML5</span>
+          <span class="px-3 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-400 text-xs font-medium rounded-full">Tailwind</span>
+          <span class="px-3 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-400 text-xs font-medium rounded-full">Responsive</span>
+        </div>
+
+        <a href="https://github.com/PauloHSilveir" target="_blank" 
+           class="inline-flex items-center gap-2 text-pink-600 dark:text-pink-400 hover:text-pink-700 dark:hover:text-pink-300 font-semibold group/link">
+          <i class="fa-solid fa-code"></i>
+          Ver Código
+          <i class="fa-solid fa-arrow-right transform group-hover/link:translate-x-1 transition-transform"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" class="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-900 dark:to-purple-900 py-16 md:py-24 text-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+    <div class="max-w-3xl">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Vamos <span class="text-blue-200 dark:text-blue-300">colaborar</span>?
+      </h2>
+      <p class="text-blue-100 dark:text-blue-200 text-lg mb-8">
+        Estou sempre aberto a novas ideias, projetos e oportunidades. Entre em contato e vamos criar algo incrível juntos!
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-6 mt-12">
+
+      <a href="mailto:paulo.silveira2@estudante.ufla.br" 
+         class="group bg-white/10 dark:bg-white/5 backdrop-blur-sm hover:bg-white/20 dark:hover:bg-white/10 p-6 rounded-xl transition-all duration-300 border border-white/20 hover:border-white/50">
+        <div class="w-12 h-12 bg-white/20 dark:bg-white/10 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+          <i class="fa-solid fa-envelope text-xl"></i>
+        </div>
+        <h3 class="font-semibold mb-2">Email</h3>
+        <p class="text-blue-100 dark:text-blue-200 text-sm break-all">paulo.silveira2@estudante.ufla.br</p>
+      </a>
+
+      <a href="https://github.com/PauloHSilveir" target="_blank" 
+         class="group bg-white/10 dark:bg-white/5 backdrop-blur-sm hover:bg-white/20 dark:hover:bg-white/10 p-6 rounded-xl transition-all duration-300 border border-white/20 hover:border-white/50">
+        <div class="w-12 h-12 bg-white/20 dark:bg-white/10 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+          <i class="fa-brands fa-github text-xl"></i>
+        </div>
+        <h3 class="font-semibold mb-2">GitHub</h3>
+        <p class="text-blue-100 dark:text-blue-200 text-sm">@PauloHSilveir</p>
+      </a>
+
+      <a href="https://linkedin.com" target="_blank" 
+         class="group bg-white/10 dark:bg-white/5 backdrop-blur-sm hover:bg-white/20 dark:hover:bg-white/10 p-6 rounded-xl transition-all duration-300 border border-white/20 hover:border-white/50">
+        <div class="w-12 h-12 bg-white/20 dark:bg-white/10 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+          <i class="fa-brands fa-linkedin text-xl"></i>
+        </div>
+        <h3 class="font-semibold mb-2">LinkedIn</h3>
+        <p class="text-blue-100 dark:text-blue-200 text-sm">Veja meu perfil</p>
+      </a>
+
+      <a href="https://github.com/PauloHSilveir" target="_blank" 
+         class="group bg-white/10 dark:bg-white/5 backdrop-blur-sm hover:bg-white/20 dark:hover:bg-white/10 p-6 rounded-xl transition-all duration-300 border border-white/20 hover:border-white/50">
+        <div class="w-12 h-12 bg-white/20 dark:bg-white/10 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+          <i class="fa-solid fa-globe text-xl"></i>
+        </div>
+        <h3 class="font-semibold mb-2">Website</h3>
+        <p class="text-blue-100 dark:text-blue-200 text-sm">Visite meu perfil</p>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 dark:bg-black text-gray-400 dark:text-gray-500 py-8 border-t border-gray-800 dark:border-gray-900">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <p class="text-sm">
+        © 2026 Paulo Henrique — Especialista em Acessibilidade Digital
+      </p>
+      <div class="flex gap-4 text-sm">
+        <a href="#" class="hover:text-white transition-colors">Privacidade</a>
+        <span class="text-gray-700 dark:text-gray-800">•</span>
+        <a href="#" class="hover:text-white transition-colors">Termos</a>
+        <span class="text-gray-700 dark:text-gray-800">•</span>
+        <p class="text-gray-500 dark:text-gray-600">Made with <i class="fa-solid fa-heart text-red-500"></i> for accessibility</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="./assets/js/script.js"></script>
+
+</body>
+</html>
